@@ -2,7 +2,7 @@ import { Message } from "discord.js";
 
 import { DiscordCommand } from "./DiscordCommand";
 import { DiscordCommandType } from "./DiscordCommandType";
-import { DiscordCommandDependencies } from "../definition/discord/DiscordCommandDependencies";
+import { UsageDependencies } from "../definition/dependencies/UsageDependencies";
 
 import { DownloadDiscordCommand } from "./download/DownloadDiscordCommand";
 
@@ -13,7 +13,7 @@ export class DiscordCommandRegistry {
     return registry;
   }
 
-  public static getCommand(command: string, args: Array<string>, message: Message, dependencies: DiscordCommandDependencies): DiscordCommand | null {
+  public static getCommand(command: string, args: Array<string>, message: Message, dependencies: UsageDependencies): DiscordCommand | null {
     const registry = this.getRegistry();
 
     const CommandForType = registry.get(command.toLowerCase());

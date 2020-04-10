@@ -2,14 +2,14 @@ import bind from "bind-decorator";
 import { Message } from "discord.js";
 
 import { DiscordCommandRegistry } from "./DiscordCommandRegistry";
-import { DiscordCommandDependencies } from "../definition/discord/DiscordCommandDependencies";
+import { UsageDependencies } from "../definition/dependencies/UsageDependencies";
 
 const { DISCORD_PREFIX } = process.env;
 
 export class DiscordCommandListener {
-  private readonly dependencies: DiscordCommandDependencies;
+  private readonly dependencies: UsageDependencies;
 
-  public constructor(commandDependencies: DiscordCommandDependencies) {
+  public constructor(commandDependencies: UsageDependencies) {
     this.dependencies = commandDependencies;
     commandDependencies.discordService.bindMessageListener(this.handleDiscordCommand);
   }

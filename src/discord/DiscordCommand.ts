@@ -1,13 +1,13 @@
 import { Message } from "discord.js";
-import { DiscordCommandDependencies } from "../definition/discord/DiscordCommandDependencies";
+import { UsageDependencies } from "../definition/dependencies/UsageDependencies";
 
 export abstract class DiscordCommand {
-  protected readonly dependencies: DiscordCommandDependencies;
+  protected readonly dependencies: UsageDependencies;
   protected readonly command: string;
   protected readonly args: Array<string>;
   protected readonly message: Message;
 
-  public constructor(dependencies: DiscordCommandDependencies, command: string, args: Array<string>, message: Message) {
+  public constructor(dependencies: UsageDependencies, command: string, args: Array<string>, message: Message) {
     this.dependencies = dependencies;
     this.command = command;
     this.args = args;

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/ashapir0/put.io-slouch#readme",
   "dependencies": {
     "@putdotio/api-client": "^7.8.2",
+    "async-mutex": "^0.2.1",
     "bind-decorator": "^1.0.11",
     "discord.js": "^12.1.1",
     "luxon": "^1.23.0",
